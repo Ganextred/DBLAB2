@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            width: 400px;
+        }
+
+        form h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="submit"] {
+            padding: 8px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h1>Database Queries</h1>
+
+    <form th:action="@{/query0}" method="GET">
+        <h3>Query 1:</h3>
+        <label for="status">Status:</label>
+        <input type="number" name="id0" id="id0">
+        <input type="submit" value="Execute">
+    </form>
+
+    <form th:action="@{/query1}" method="GET">
+        <h3>Query 1:</h3>
+        <label for="status">Status:</label>
+        <input type="text" name="status" id="status">
+        <br>
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" id="start_date">
+        <br>
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" id="end_date">
+        <br>
+        <input type="submit" value="Execute">
+    </form>
+
+    <form th:action="@{/query2}" method="R">
+        <h3>Query 2:</h3>
+        <label for="user_id">User ID:</label>
+        <input type="text" name="user_id" id="user_id">
+        <br>
+        <input type="submit" value="Execute">
+    </form>
+
+    <form th:action="@{/query3}" method="GET">
+        <h3>Query 3:</h3>
+        <label for="user_k1">User K1:</label>
+        <input type="text" name="user_k1" id="user_k1">
+        <br>
+        <input type="submit" value="Execute">
+    </form>
+
+    <form th:action="@{/query4}" method="GET">
+        <h3>Query 4:</h3>
+        <label for="room_n1">Room N1:</label>
+        <input type="text" name="room_n1" id="room_n1">
+        <br>
+        <input type="submit" value="Execute">
+    </form>
+
+    <form th:action="@{/query5}" method="GET">
+        <h3>Query 5:</h3>
+        <label for="role">Role:</label>
+        <input type="text" name="role" id="role">
+        <br>
+        <input type="submit" value="Execute">
+    </form>
+
+    <form th:action="@{/query6}" method="GET">
+        <h3>Query 6:</h3>
+        <label for="booking_k1">Booking K1:</label>
+        <input type="text" name="booking_k1" id="booking_k1">
+        <br>
+        <input type="submit" value="Execute">
+    </form>
+
+</body>
+</html>
