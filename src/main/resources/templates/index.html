@@ -67,65 +67,55 @@
 <h1>Database Queries</h1>
 
     <form th:action="@{/query0}" method="GET">
-        <h3>Query 1:</h3>
+        <h3>Query 0: Знайти користувача по ід</h3>
         <label for="status">Status:</label>
         <input type="number" name="id0" id="id0">
         <input type="submit" value="Execute">
     </form>
 
     <form th:action="@{/query1}" method="GET">
-        <h3>Query 1:</h3>
-        <label for="status">Status:</label>
+        <h3>Query 1: Знайти усі апартаменти які знаходяться в обраному статусі на проміжку обраного часу.</h3>
+        <label for="status">Статус (BOOKED, BOUGHT):</label>
         <input type="text" name="status" id="status">
         <br>
-        <label for="start_date">Start Date:</label>
+        <label for="start_date">Дата заселеня:</label>
         <input type="date" name="start_date" id="start_date">
         <br>
-        <label for="end_date">End Date:</label>
+        <label for="end_date">Дата виселеня:</label>
         <input type="date" name="end_date" id="end_date">
         <br>
         <input type="submit" value="Execute">
     </form>
 
-    <form th:action="@{/query2}" method="R">
-        <h3>Query 2:</h3>
-        <label for="user_id">User ID:</label>
-        <input type="text" name="user_id" id="user_id">
+    <form th:action="@{/query2}" method="GET">
+        <h3>Query 2: Знайти усі апартаменти оплачені користувачем К1.</h3>
+        <label for="username">Ім'я користувача:</label>
+        <input type="text" name="username" id="username">
         <br>
         <input type="submit" value="Execute">
     </form>
 
     <form th:action="@{/query3}" method="GET">
-        <h3>Query 3:</h3>
-        <label for="user_k1">User K1:</label>
-        <input type="text" name="user_k1" id="user_k1">
-        <br>
+        <h3>Query 3: Обрати користувачів що мають бронювання на усі номери.</h3>
         <input type="submit" value="Execute">
     </form>
 
     <form th:action="@{/query4}" method="GET">
-        <h3>Query 4:</h3>
-        <label for="room_n1">Room N1:</label>
-        <input type="text" name="room_n1" id="room_n1">
+        <h3>Query 4: Обрати номери в яких є будуть зупиняться прийнамні усі люди що зупиняються в номері Н1.</h3>
+        <label for="apartmentId">Номер апартаментів:</label>
+        <input type="text" name="apartmentId" id="apartmentId">
         <br>
         <input type="submit" value="Execute">
     </form>
 
     <form th:action="@{/query5}" method="GET">
-        <h3>Query 5:</h3>
-        <label for="role">Role:</label>
-        <input type="text" name="role" id="role">
+        <h3>Query 5: Обрати усіх користувачів що мають ті і тільки ті ролі що і користувач К1</h3>
+        <label for="username5">Ім'я корисутвача:</label>
+        <input type="text" name="username" id="username5">
         <br>
         <input type="submit" value="Execute">
     </form>
 
-    <form th:action="@{/query6}" method="GET">
-        <h3>Query 6:</h3>
-        <label for="booking_k1">Booking K1:</label>
-        <input type="text" name="booking_k1" id="booking_k1">
-        <br>
-        <input type="submit" value="Execute">
-    </form>
 
 </body>
 </html>

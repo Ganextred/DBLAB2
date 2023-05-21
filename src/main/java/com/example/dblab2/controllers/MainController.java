@@ -2,6 +2,7 @@ package com.example.dblab2.controllers;
 
 import com.example.dblab2.data.dto.Apartment;
 import com.example.dblab2.data.dto.Status;
+import com.example.dblab2.data.dto.User;
 import com.example.dblab2.data.repository.Repository;
 import com.google.common.math.Quantiles;
 import org.apache.commons.math3.stat.descriptive.rank.Percentile;
@@ -27,7 +28,7 @@ public class MainController {
 
     @GetMapping("/query0")
     @ResponseBody
-    public String executeQuery1(@RequestParam("id0") Long id,
+    public String handleQuery0(@RequestParam("id0") Long id,
                                 Model model) {
 
         return repository.findUserById(id).toString();
@@ -39,7 +40,40 @@ public class MainController {
                                @RequestParam("start_date") String startDate,
                                @RequestParam("end_date") String endDate,
                                Model model) {
-        List<Apartment> apartments = repository.query1(LocalDate.parse(startDate), LocalDate.parse(endDate), status);
+        List<Integer> apartments = repository.query1(LocalDate.parse(startDate), LocalDate.parse(endDate), status);
         return apartments.toString();
     }
+
+    @GetMapping("/query2")
+    @ResponseBody
+    public String handleQuery2(@RequestParam("username") String username,
+                               Model model) {
+        List<Integer> apartments = repository.query2(username);
+        return apartments.toString();
+    }
+
+    @GetMapping("/query3")
+    @ResponseBody
+    public String handleQuery3(Model model) {
+        List<String> apartments = repository.query3();
+        return apartments.toString();
+    }
+
+    @GetMapping("/query4")
+    @ResponseBody
+    public String handleQuery4(@RequestParam("apartmentId") Integer apartmentId,
+                               Model model) {
+        List<Integer> apartments = repository.query4(apartmentId);
+        return apartments.toString();
+    }
+
+    @GetMapping("/query5")
+    @ResponseBody
+    public String handleQuery5(@RequestParam("username") String username,
+                               Model model) {
+        List<String> apartments = repository.query5(username);
+        return apartments.toString();
+    }
+
+
 }
