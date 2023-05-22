@@ -9,7 +9,7 @@ WHERE (as2.status = ?)
 SELECT DISTINCT *
 FROM apartment a
 LEFT JOIN apartment_status as2 ON a.id = as2.apartment_id
-AND as.status = 'BOUGHT' LEFT JOIN usr u on as2.user_id = u.user_id AND u.user_name = ?
+AND as.status = 'BOUGHT' LEFT JOIN usr u on as2.user_id = u.user_id WHERE u.user_name = ?
 
 --3.Обрати користувачів що мають бронювання на усі номери.
 SELECT u.username
